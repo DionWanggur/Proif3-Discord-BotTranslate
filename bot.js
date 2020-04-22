@@ -49,11 +49,26 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
             break;
 
+            case 'help':
+                bot.sendMessage({
+                    to: channelID,
+                    embed: {
+                        color: 3447003,
+                        footer: { 
+                          text: 
+                          '!translate : untuk menerjemahkan text ; e.x !translate english(bahasa masukan) indonesian(bahasa keluaran) welcome(text)'
+
+                        },
+                        title: 'How to use this bot?',
+                      }
+                });
+            break;
+
             case 'translate':
                 if (args.length < 3) {
                     bot.sendMessage({
                         to: channelID,
-                        message: 'salah kontol!!'
+                        message: 'Masukan input dengan benar!'
                     });
                 }
                 else{
